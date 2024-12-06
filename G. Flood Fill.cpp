@@ -4,8 +4,8 @@ using namespace std;
 
 int recur(const vector<char>& matrix, int x, int y, int w_vol, int n, int m, vector<int>& covered){
     
-    int matrix_index = x+n*(y-1) - 1;
-    if( x > n || y > m || matrix_index >= n*m || matrix_index < 0 || matrix[matrix_index] == '*' || covered[matrix_index]  ){
+    int matrix_index = (x-1)*m + (y-1);
+    if( x > n || y > m || x <= 0 || y <= 0 || matrix_index >= n*m || matrix_index < 0 || matrix[matrix_index] == '*' || covered[matrix_index] ){
         return 0;
     }
 
