@@ -2,23 +2,7 @@
 
 using namespace std;
 
-
-
-void recur(vector<vector<int>>& vectors1, vector<vector<int>>& vectors2, int index, int c1, int c2 ,int r1){
-    if( index > r1 ){
-        return;
-    }
-
-    for (int i=0; i < c2; i++)
-    {
-        cout<<multiply(vectors1[index],vectors2[i],c1)<<" ";
-    }
-    
-    
-
-}
-
-int multiply(vector<int>& vec1, vector<int>& vec2 ,int size){
+int multiply_(vector<int>& vec1, vector<int>& vec2 ,int size){
     int res=0;
     for (size_t i = 0; i < size; i++)
     {
@@ -26,6 +10,22 @@ int multiply(vector<int>& vec1, vector<int>& vec2 ,int size){
     }
     return res;
 }
+
+void recur(vector<vector<int>>& vectors1, vector<vector<int>>& vectors2, int index, int c1, int c2 ,int r1){
+    if( index == r1 ){
+        return;
+    }
+
+    for (int i=0; i < c2; i++)
+    {
+        cout<<multiply_(vectors1[index],vectors2[i],c1)<<" ";
+    }
+    cout<<endl;
+    
+    recur(vectors1,vectors2,index+1,c1,c2,r1);
+}
+
+
 
 
 
