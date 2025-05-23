@@ -5,6 +5,4 @@
 *.out 
 *.a 
 *.lib 
-# Ignore all files without an extension
-*[^.]*[^.][^.]*
 .vscode/
